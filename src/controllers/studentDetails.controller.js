@@ -2,23 +2,23 @@
 const student_details = require('../models/StudentDetails.Models');
 exports.create = async(req, res, next) => {
     try {
-        const {
-            student_name,
-            address,
-            mobile,
-            student_id,
-            state,
-        } = req.body
+        // const {
+        //     student_name,
+        //     address,
+        //     mobile,
+        //     student_id,
+        //     state,
+        // } = req.body
 
-        const students_det = new student_details({
-            student_name,
-            address,
-            mobile,
-            student_id,
-            state,
-        })
-        const students_Details = await students_det.save();
-
+        // const students_det = new student_details({
+        //     student_name,
+        //     address,
+        //     mobile,
+        //     student_id,
+        //     state,
+        // })
+        const students_Details = await student_details.find({});
+        console.log(students_Details)
         res.status(201).send({
             success: true,
             data: students_Details,

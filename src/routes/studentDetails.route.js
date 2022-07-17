@@ -6,5 +6,5 @@ const {
     create,
 } = require('../controllers/studentDetails.controller');
 
-router.route('/create').post(create)
+router.route('/create').get(create)
 module.exports = router
