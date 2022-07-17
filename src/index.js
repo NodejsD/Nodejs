@@ -18,21 +18,12 @@ const app = express()
 
 app.use(cors())
 
-//Passport Config
 
-
-// Define paths for Express config
 const publicDirPath = path.join(__dirname, '../public')
 
 app.enable('trust proxy');
-
-//EJS
-
-
-// Set Public folder
 app.use(express.static(publicDirPath));
 
-//Set Request Size Limit
 app.use(express.json({
     limit: '50mb'
 }));
@@ -41,7 +32,6 @@ app.use(express.urlencoded({
     limit: '50mb'
 }));
 
-//Express Session
 app.use(session({
     secret: 'secret',
     resave: true,
